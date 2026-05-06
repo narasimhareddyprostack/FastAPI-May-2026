@@ -1,0 +1,29 @@
+FastAPI is modern, fast, and high-performnace web f/w
+for building RestAPI with python.
+
+It is designed to be developer-friendly, high effient
+and easy to use.
+
+DJango - > DRF ie DJango Rest F/W
+Flash
+--------------------------------------------------------
+Required Software
+-----------------
+1.Python
+2.PIP
+3.VS Code/PyCharm
+4.PostMan
+
+Why FastAPI?
+--------------------------------------------------------
+Virtual Environment?
+
+FastAPI installation?
+
+pip install fastapi uvicorn
+
+What is uvicorn?
+high-performance ASGI web server impl for python?
+
+Asyncronous Servr GatewayInterface
+=========================================
