@@ -16,3 +16,79 @@ Required Software
 
 Why FastAPI?
 --------------------------------------------------------
+Virtual Environment?
+
+FastAPI installation?
+
+pip install fastapi uvicorn
+
+What is uvicorn?
+high-performance ASGI web server impl for python?
+
+Asyncronous Servr GatewayInterface
+=========================================
+
+http://127.0.0.1:8000/			        GET
+User Module API
+http://127.0.0.1:8000/user/read			GET
+http://127.0.0.1:8000/user/create		POST
+http://127.0.0.1:8000/user/update/101		PUT
+http://127.0.0.1:8000/user/delete/101		PUT
+
+Product Module API's
+
+Order Module API's
+
+FastAPI - Routing
+===================
+
+https://nobero.com/collections/pick-printed-t-shirts?tw_source=google&tw_adid=663048684674&tw_campaign=20284812363&gad_source=1&gad_campaignid=20284812363&gbraid=0AAAAADQVNsR9arD5DYoWNxi_lpkO-OPJZ&gclid=Cj0KCQjw_IXQBhCkARIsADqELbL-wyPI239ms8gDiXCwIwUdL-E7IyeLhlm-qX9a0Wu1oOwisuHVggUaApRyEALw_wcB
+https://nobero.com/
+collections/
+pick-printed-t-shirts
+?
+tw_source=google
+& tw_adid=663048684674
+& tw_campaign=20284812363
+& gad_source=1
+& gad_campaignid=20284812363
+& gbraid=0AAAAADQVNsR9arD5DYoWNxi_lpkO-OPJZ
+& gclid=Cj0KCQjw_IXQBhCkARIsADqELbL-wyPI239ms8gDiXCwIwUdL-E7IyeLhlm-qX9a0Wu1oOwisuHVggUaApRyEALw_wcB
+
+Path Parameter? It is used to identify a specific resouce.
+
+https://nobero.com/
+collections/t-shirts   - Path Meter? 
+
+https://nobero.com/
+collections/classic-polo - Path Meter
+
+https://nobero.com/
+collections/mens-shorts-collection
+
+http://fk.com/users          - fetch all users
+http://fk.com/users/101      - fetch user by id
+
+User Case                     Emplamples
+---------------------------------------------
+Fetch User by User Id	  http://127.0.0.1:8000/user/101
+
+
+https://nobero.com/
+
+http://127.0.0.1:8080/
+products/zip-pocket-shorts-3          - Path Parameter
+?
+variant=56196382195878                - Query Parameter
+
+http://127.0.0.1:8080/
+products/zip-pocket-shorts-3?variant=56196382195878
+
+product_router.py
+---------------------------------------------------
+router=APIRouter(prefix="/products")
+
+@router.get("/zip-pocket-shorts-3")
+def get_all_pocket_shorts():
+	#return {"msg":"Getting all shorts}
+	#return products
