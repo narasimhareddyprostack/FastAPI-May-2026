@@ -92,3 +92,5 @@ router=APIRouter(prefix="/products")
 def get_all_pocket_shorts():
 	#return {"msg":"Getting all shorts}
 	#return products
+
+How to receive - Query Parameters?
