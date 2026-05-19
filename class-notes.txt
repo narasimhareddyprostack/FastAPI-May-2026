@@ -107,3 +107,35 @@ to fetch specific resources
 
 Query para - optional
 to apply filters on returned data
+========================================
+30 Min - Pydantic Package
+BaseModel
+
+CRUD API using FastAPI,MongoDB
+========================================
+PIP install pymongo
+
+How to see the list installed py package?
+
+pip list
+================================================
+
+usage:Create Employee
+Rest API URL: http://127.0.0.1:8000/emp/create
+Method Type: POST
+Required Fields:eid,ename,esal,loc
+Access Type:Public
+
+
+usage:Get all Employee
+Rest API URL: http://127.0.0.1:8000/emp/read
+Method Type: GET
+Required Fields:None
+Access Type:Public
+
+
+Get Employee by id
+
+Update Employee
+
+Delete Employee by Id

@@ -94,3 +94,22 @@ def get_all_pocket_shorts():
 	#return products
 
 How to receive - Query Parameters?
+====================================
+
+http://127.0.0.1:8000/products
+http://127.0.0.1:8000/products?category=Electronics
+
+Multiple Query Para
+http://127.0.0.1:8000/products?category=Electronics&price=2000
+
+Path Para - is a part of url:
+to fetch specific resources
+
+Query para - optional
+to apply filters on returned data
+========================================
+30 Min - Pydantic Package
+BaseModel
+
+CRUD API using FastAPI,MongoDB
+========================================
