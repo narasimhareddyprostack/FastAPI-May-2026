@@ -65,17 +65,6 @@ def get_users(db:Session=Depends(get_db)):
     return db.query(User).all()
 
 
-def get_user_id():
-    pass 
-
-def update_user():
-    pass 
-
-def delete_user():
-    pass 
-
-
-
 '''
 usage: fetch user by Id
 Rest API URL: http://localhost:8000/read/101
@@ -84,6 +73,13 @@ Required Fields:None
 Access Type:Public
 '''
 
+@app.get("/read/{uid}",response_model=UserResponse)
+def get_user_id(uid:int,db:Session = Depends(get_db)):
+    user=db.query(User).filter(User.uid == uid).first()
+
+    if not user:
+        raise HTTPException(status_code=404,detail="User Not Found")
+    return user 
 
 
 '''
@@ -94,6 +90,24 @@ Required Fields:uname,email,location
 Access Type:Public
 '''
 
+@app.put("/update/{uid}",response_model=UserResponse)
+def update_user(uid:int,update_user:UserCreate,db:Session=Depends(get_db)):
+    print(update_user)
+    user=db.query(User).filter(User.uid == uid).first()
+
+    if not user:
+        raise HTTPException(status_code=404,detail="User Not Found")
+    
+    user.uname=update_user.uname
+    user.email=update_user.email 
+    user.location=update_user.location
+
+    db.commit()
+    db.refresh(user)
+
+    return user
+
+
 
 '''
 usage: delete user by id
@@ -102,3 +116,24 @@ Method Type: DELETE
 Required Fields:None
 Access Type:Public
 '''
+
+@app.delete("/delete/{uid}")
+def delete_user(uid:int,db:Session=Depends(get_db)):
+    user=db.query(User).filter(User.uid == uid).first()
+
+    if not user:
+        raise HTTPException(status_code=404,detail="User Not Found")
+
+
+    print(user.__dict__)
+    db.delete(user)
+    db.commit()
+
+    return {"msg":"Deleted Successfully"}
+
+
+
+
+
+
+

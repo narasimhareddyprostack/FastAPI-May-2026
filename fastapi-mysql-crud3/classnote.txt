@@ -1,8 +1,0 @@
-install packages
-------------------
-pip install fastapi uvicorn sqlalchemy pymysql
-
-database.py 
-model.py 
-schemas.py 
-app.py 
